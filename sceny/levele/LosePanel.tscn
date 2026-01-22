@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvakfe7cy6es6"]
+
+[ext_resource type="Script" uid="uid://b8obs40s07qfr" path="res://skrypty/LosePanel.cs" id="1_47jvg"]
+[ext_resource type="Texture2D" uid="uid://t2k65uk73thy" path="res://grafiki/przegrana_menu.png" id="2_emwmi"]
+[ext_resource type="Texture2D" uid="uid://bvamyhvry8rcd" path="res://grafiki/menu_panel.png" id="3_xtn85"]
+[ext_resource type="Script" uid="uid://h8w8yd2c1jqq" path="res://skrypty/ButtonMenu.cs" id="4_emwmi"]
+[ext_resource type="Texture2D" uid="uid://dtaw0h1lxmglb" path="res://grafiki/powtorka.png" id="5_c4nrn"]
+[ext_resource type="Script" uid="uid://btltq6cqpj5in" path="res://skrypty/ButtonRetry.cs" id="6_emwmi"]
+
+[node name="LosePanel" type="CanvasLayer"]
+script = ExtResource("1_47jvg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 238.0
+offset_top = 55.0
+offset_right = 973.0
+offset_bottom = 613.0
+texture = ExtResource("2_emwmi")
+
+[node name="ButtonMenu" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 382.0
+offset_right = 602.0
+offset_bottom = 505.0
+texture_normal = ExtResource("3_xtn85")
+script = ExtResource("4_emwmi")
+
+[node name="ButtonRetry" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 275.0
+offset_right = 570.0
+offset_bottom = 370.0
+texture_normal = ExtResource("5_c4nrn")
+script = ExtResource("6_emwmi")
+
+[node name="ScoreLabel" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 45.0
+offset_right = 551.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[connection signal="GoToMenu" from="." to="TextureRect/ButtonMenu" method="_on_lose_panel_go_to_menu"]
+[connection signal="RetryLevel" from="." to="TextureRect/ButtonRetry" method="_on_lose_panel_retry_level"]
+[connection signal="pressed" from="TextureRect/ButtonMenu" to="TextureRect/ButtonMenu" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/ButtonRetry" to="TextureRect/ButtonRetry" method="_on_pressed"]

@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvqjkphnec3k2"]
+
+[ext_resource type="Script" uid="uid://c3ip1ihbwia04" path="res://skrypty/LevelScene.cs" id="1_m507e"]
+[ext_resource type="AudioStream" uid="uid://dv6ltqbst7qmn" path="res://Audio/win_music.ogg" id="1_xqppa"]
+[ext_resource type="PackedScene" uid="uid://1g134yxmgm47" path="res://sceny/levele/LetterButton.tscn" id="2_iwgwp"]
+[ext_resource type="AudioStream" uid="uid://qaaqahq1fok5" path="res://Audio/klik.ogg" id="2_xqppa"]
+[ext_resource type="PackedScene" uid="uid://cl17aaqo7uod4" path="res://sceny/levele/CrosswordCell.tscn" id="3_ifslx"]
+[ext_resource type="PackedScene" uid="uid://dxl5do2qcec2u" path="res://sceny/levele/WinPanel.tscn" id="4_gvjvb"]
+[ext_resource type="PackedScene" uid="uid://bvakfe7cy6es6" path="res://sceny/levele/LosePanel.tscn" id="5_olhk8"]
+
+[node name="LevelScene" type="Control" node_paths=PackedStringArray("levelLabel", "movesLabel", "scatteredLettersGrid", "crosswordGrid", "cluesContainer", "resetBtn", "checkBtn", "hintBtn")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m507e")
+levelLabel = NodePath("MainContainer/TopBar/LevelLabel")
+movesLabel = NodePath("MainContainer/TopBar/MovesLabel")
+scatteredLettersGrid = NodePath("MainContainer/GameSplit/LettersContainer/ScatteredLettersGrid")
+crosswordGrid = NodePath("MainContainer/GameSplit/CrosswordContainer/CrosswordGrid")
+cluesContainer = NodePath("MainContainer/GameSplit/CrosswordContainer/CluesContainer")
+resetBtn = NodePath("MainContainer/TopBar/ResetBtn")
+checkBtn = NodePath("MainContainer/BottomBar/CheckBtn")
+hintBtn = NodePath("MainContainer/BottomBar/HintBtn")
+letterButtonPrefab = ExtResource("2_iwgwp")
+crosswordCellPrefab = ExtResource("3_ifslx")
+winPanelPrefab = ExtResource("4_gvjvb")
+losePanelPrefab = ExtResource("5_olhk8")
+
+[node name="BackGround" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 647.0
+color = Color(0.8862745, 0.6627451, 0.94509804, 1)
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_xqppa")
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xqppa")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 1153.0
+offset_bottom = 646.0
+
+[node name="TopBar" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MainContainer/TopBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Poziom: 1/15"
+horizontal_alignment = 2
+
+[node name="ResetBtn" type="Button" parent="MainContainer/TopBar"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Reset"
+alignment = 2
+
+[node name="MovesLabel" type="Label" parent="MainContainer/TopBar"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Ruchy: 10/10"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GameSplit" type="HSplitContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 2
+
+[node name="LettersContainer" type="ScrollContainer" parent="MainContainer/GameSplit"]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+
+[node name="ScatteredLettersGrid" type="GridContainer" parent="MainContainer/GameSplit/LettersContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="CrosswordContainer" type="VBoxContainer" parent="MainContainer/GameSplit"]
+layout_mode = 2
+
+[node name="CrosswordGrid" type="GridContainer" parent="MainContainer/GameSplit/CrosswordContainer"]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 8
+
+[node name="CluesContainer" type="VBoxContainer" parent="MainContainer/GameSplit/CrosswordContainer"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="BottomBar" type="HBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+
+[node name="CheckBtn" type="Button" parent="MainContainer/BottomBar"]
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "SPRAWDŹ"
+
+[node name="HintBtn" type="Button" parent="MainContainer/BottomBar"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+text = "PODPOWIEDŹ"

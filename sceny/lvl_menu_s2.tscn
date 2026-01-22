@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbr1ujtj6011x"]
+
+[ext_resource type="Texture2D" uid="uid://baohpmhip4rkr" path="res://grafiki/strzalka_kolejna_s.png" id="1_yp2ds"]
+[ext_resource type="Script" uid="uid://b1pupfn1dfcyd" path="res://skrypty/PowrotStrona1.cs" id="2_lx2dn"]
+
+[node name="LvlMenuS2" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 646.0
+color = Color(0.8862745, 0.6627451, 0.94509804, 1)
+
+[node name="powrot_strona_1" type="TextureButton" parent="."]
+offset_left = 154.0
+offset_top = 644.0
+offset_right = 310.0
+offset_bottom = 752.0
+rotation = 3.1371598
+texture_normal = ExtResource("1_yp2ds")
+script = ExtResource("2_lx2dn")
+
+[connection signal="pressed" from="powrot_strona_1" to="powrot_strona_1" method="_on_pressed"]

@@ -1,0 +1,184 @@
+[gd_scene load_steps=36 format=3 uid="uid://bnc6d7y60l8ag"]
+
+[ext_resource type="Texture2D" uid="uid://k1mno3rervoq" path="res://grafiki/domek.png" id="1_r8bj3"]
+[ext_resource type="Script" uid="uid://dbyr30hpqiknl" path="res://skrypty/LvlMenu.cs" id="1_w56ot"]
+[ext_resource type="Script" uid="uid://d03ntox3445lk" path="res://skrypty/PowrotDoMenu.cs" id="2_krp6p"]
+[ext_resource type="Texture2D" uid="uid://baohpmhip4rkr" path="res://grafiki/strzalka_kolejna_s.png" id="3_8kafw"]
+[ext_resource type="Script" uid="uid://ibl8o231v8ju" path="res://skrypty/kolejnaScena1.cs" id="4_v5lak"]
+[ext_resource type="Texture2D" uid="uid://by8tp3l0e67mj" path="res://grafiki/1.png" id="5_ru141"]
+[ext_resource type="Script" uid="uid://3epep8mrcu8w" path="res://skrypty/skr_a.cs" id="6_w56ot"]
+[ext_resource type="Texture2D" uid="uid://2p4fwx7dm2vp" path="res://grafiki/2.png" id="7_4i28j"]
+[ext_resource type="Script" uid="uid://dvv7o4lmhyfa7" path="res://skrypty/skr_b.cs" id="8_kqneh"]
+[ext_resource type="Texture2D" uid="uid://dxq44r5kyeksb" path="res://grafiki/3.png" id="9_g8lsx"]
+[ext_resource type="Script" uid="uid://5go0k6uxpiru" path="res://skrypty/skr_c.cs" id="10_8rexm"]
+[ext_resource type="Texture2D" uid="uid://dpdww314mboj0" path="res://grafiki/4.png" id="11_f4esl"]
+[ext_resource type="Script" uid="uid://dw5g5m0tndms7" path="res://skrypty/skr_d.cs" id="12_8qglu"]
+[ext_resource type="Texture2D" uid="uid://hlf3c2aseelr" path="res://grafiki/5.png" id="13_dtt3h"]
+[ext_resource type="Script" uid="uid://cg4mipx6e7gmn" path="res://skrypty/skr_e.cs" id="14_osd8q"]
+[ext_resource type="Texture2D" uid="uid://tyypodw1e682" path="res://grafiki/6.png" id="15_judfq"]
+[ext_resource type="Script" uid="uid://cpudo3tuv4syp" path="res://skrypty/skr_f.cs" id="16_kya6x"]
+[ext_resource type="Texture2D" uid="uid://bp8s0hejn2u11" path="res://grafiki/7.png" id="17_fbeyn"]
+[ext_resource type="Script" uid="uid://c2habg4cgystk" path="res://skrypty/skr_g.cs" id="18_3nwlj"]
+[ext_resource type="Texture2D" uid="uid://28aeb87vbyta" path="res://grafiki/8.png" id="19_xogpg"]
+[ext_resource type="Script" uid="uid://cda878u300a7d" path="res://skrypty/skr_h.cs" id="20_nvw2k"]
+[ext_resource type="Texture2D" uid="uid://bhg58epcceutu" path="res://grafiki/9.png" id="21_vysyu"]
+[ext_resource type="Script" uid="uid://cvh785hlnnt8o" path="res://skrypty/skr_i.cs" id="22_dm2bv"]
+[ext_resource type="Texture2D" uid="uid://ce77uaejm7b08" path="res://grafiki/10.png" id="23_g1kpu"]
+[ext_resource type="Script" uid="uid://cqocyknkbhe54" path="res://skrypty/skr_j.cs" id="24_lpoi6"]
+[ext_resource type="Texture2D" uid="uid://b7uedjyi34elw" path="res://grafiki/11.png" id="25_nnwbg"]
+[ext_resource type="Script" uid="uid://dikcjabdoqfve" path="res://skrypty/skr_k.cs" id="26_iwia0"]
+[ext_resource type="Texture2D" uid="uid://de5qilxfmx6p4" path="res://grafiki/12.png" id="27_v7t73"]
+[ext_resource type="Script" uid="uid://oxi3fn63clsr" path="res://skrypty/skr_l.cs" id="28_0wbcy"]
+[ext_resource type="Texture2D" uid="uid://dqbmksg0wtyt0" path="res://grafiki/13.png" id="29_x6l1v"]
+[ext_resource type="Script" uid="uid://be6g6nlgh1dvm" path="res://skrypty/skr_m.cs" id="30_sp22s"]
+[ext_resource type="Texture2D" uid="uid://bliw0tkheh6nl" path="res://grafiki/14.png" id="31_l81ug"]
+[ext_resource type="Script" uid="uid://bpluqino6u4l4" path="res://skrypty/skr_n.cs" id="32_ctfjd"]
+[ext_resource type="Texture2D" uid="uid://cyukpetvu8mkh" path="res://grafiki/15.png" id="33_kx6jv"]
+[ext_resource type="Script" uid="uid://ckc736o6r6o7y" path="res://skrypty/skr_o.cs" id="34_psjjx"]
+
+[node name="LvlMenu" type="Node2D" node_paths=PackedStringArray("gridContainer")]
+position = Vector2(0, 2)
+script = ExtResource("1_w56ot")
+gridContainer = NodePath("Control/MarginContainer/GridContainer")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 641.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 1151.0
+offset_bottom = 645.0
+color = Color(0.8862745, 0.6627451, 0.94509804, 1)
+
+[node name="powrot_do_menu" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 536.0
+offset_right = 122.0
+offset_bottom = 637.0
+action_mode = 0
+texture_normal = ExtResource("1_r8bj3")
+script = ExtResource("2_krp6p")
+
+[node name="kolejna_strona_lvl_s1" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 539.0
+offset_right = 1151.0
+offset_bottom = 647.0
+texture_normal = ExtResource("3_8kafw")
+script = ExtResource("4_v5lak")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 39.0
+offset_right = 1081.0
+offset_bottom = 542.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="1lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_ru141")
+script = ExtResource("6_w56ot")
+
+[node name="2lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("7_4i28j")
+script = ExtResource("8_kqneh")
+
+[node name="3lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_g8lsx")
+script = ExtResource("10_8rexm")
+
+[node name="4lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("11_f4esl")
+script = ExtResource("12_8qglu")
+
+[node name="5lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("13_dtt3h")
+script = ExtResource("14_osd8q")
+
+[node name="6lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_judfq")
+script = ExtResource("16_kya6x")
+
+[node name="7lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("17_fbeyn")
+script = ExtResource("18_3nwlj")
+
+[node name="8lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("19_xogpg")
+script = ExtResource("20_nvw2k")
+
+[node name="9lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("21_vysyu")
+script = ExtResource("22_dm2bv")
+
+[node name="10lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("23_g1kpu")
+script = ExtResource("24_lpoi6")
+
+[node name="11lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("25_nnwbg")
+script = ExtResource("26_iwia0")
+
+[node name="12lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("27_v7t73")
+script = ExtResource("28_0wbcy")
+
+[node name="13lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("29_x6l1v")
+script = ExtResource("30_sp22s")
+
+[node name="14lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("31_l81ug")
+script = ExtResource("32_ctfjd")
+
+[node name="15lvl" type="TextureButton" parent="Control/MarginContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("33_kx6jv")
+script = ExtResource("34_psjjx")
+
+[connection signal="pressed" from="Control/powrot_do_menu" to="Control/powrot_do_menu" method="_on_pressed"]
+[connection signal="pressed" from="Control/kolejna_strona_lvl_s1" to="Control/kolejna_strona_lvl_s1" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/1lvl" to="Control/MarginContainer/GridContainer/1lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/2lvl" to="Control/MarginContainer/GridContainer/2lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/3lvl" to="Control/MarginContainer/GridContainer/3lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/4lvl" to="Control/MarginContainer/GridContainer/4lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/5lvl" to="Control/MarginContainer/GridContainer/5lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/6lvl" to="Control/MarginContainer/GridContainer/6lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/7lvl" to="Control/MarginContainer/GridContainer/7lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/8lvl" to="Control/MarginContainer/GridContainer/8lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/9lvl" to="Control/MarginContainer/GridContainer/9lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/10lvl" to="Control/MarginContainer/GridContainer/10lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/11lvl" to="Control/MarginContainer/GridContainer/11lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/12lvl" to="Control/MarginContainer/GridContainer/12lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/13lvl" to="Control/MarginContainer/GridContainer/13lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/14lvl" to="Control/MarginContainer/GridContainer/14lvl" method="_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/GridContainer/15lvl" to="Control/MarginContainer/GridContainer/15lvl" method="_on_pressed"]

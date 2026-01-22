@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxl5do2qcec2u"]
+
+[ext_resource type="Script" uid="uid://cuh28lp07sm3n" path="res://skrypty/WinPanel.cs" id="1_v3yov"]
+[ext_resource type="Texture2D" uid="uid://11t0qpchqqxd" path="res://grafiki/wygrana_menu.png" id="2_yoobi"]
+[ext_resource type="Texture2D" uid="uid://cgc3drooo2wne" path="res://grafiki/kolejny_lvl.png" id="3_f5kf2"]
+[ext_resource type="Script" uid="uid://dsab42ax8drx1" path="res://skrypty/ButtonNext.cs" id="4_f5kf2"]
+[ext_resource type="Texture2D" uid="uid://bvamyhvry8rcd" path="res://grafiki/menu_panel.png" id="4_n3rbp"]
+[ext_resource type="Script" uid="uid://h8w8yd2c1jqq" path="res://skrypty/ButtonMenu.cs" id="6_f5kf2"]
+
+[node name="WinPanel" type="CanvasLayer"]
+script = ExtResource("1_v3yov")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 263.0
+offset_top = 42.0
+offset_right = 944.0
+offset_bottom = 611.0
+texture = ExtResource("2_yoobi")
+
+[node name="ButtonNext" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 277.0
+offset_right = 534.0
+offset_bottom = 385.0
+texture_normal = ExtResource("3_f5kf2")
+script = ExtResource("4_f5kf2")
+
+[node name="ButtonMenu" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 391.0
+offset_right = 552.0
+offset_bottom = 505.0
+texture_normal = ExtResource("4_n3rbp")
+script = ExtResource("6_f5kf2")
+
+[node name="ScoreLabel" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 47.0
+offset_right = 494.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[connection signal="GoToMenu" from="." to="TextureRect/ButtonMenu" method="_on_win_panel_go_to_menu"]
+[connection signal="NextLevel" from="." to="TextureRect/ButtonNext" method="_on_win_panel_next_level"]
+[connection signal="pressed" from="TextureRect/ButtonNext" to="TextureRect/ButtonNext" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/ButtonMenu" to="TextureRect/ButtonMenu" method="_on_pressed"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://1g134yxmgm47"]
+
+[ext_resource type="Script" uid="uid://6um2oe3bo5tp" path="res://skrypty/LetterButton.cs" id="1_au16r"]
+
+[node name="LetterButton" type="Button"]
+custom_minimum_size = Vector2(60, 60)
+offset_left = 366.0
+offset_top = 192.0
+offset_right = 426.0
+offset_bottom = 252.0
+script = ExtResource("1_au16r")

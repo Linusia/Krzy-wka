@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://djevg1uaj4tiq"]
+
+[ext_resource type="Texture2D" uid="uid://7i0c13xt3j1f" path="res://grafiki/przyciskStart.png" id="1_51das"]
+[ext_resource type="Script" uid="uid://eow4p0rj72j" path="res://skrypty/startg.cs" id="2_51das"]
+[ext_resource type="Texture2D" uid="uid://b0uqccf7jxmfx" path="res://grafiki/nazwa.png" id="3_y5yvk"]
+[ext_resource type="Script" uid="uid://c2bpxd6nkha1v" path="res://skrypty/animacja_krzy.cs" id="4_uaagf"]
+
+[node name="Start" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -975.0
+offset_top = 540.0
+offset_right = -975.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 975.0
+offset_top = -540.0
+offset_right = 2127.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8862745, 0.6627451, 0.94509804, 1)
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 463.0
+offset_top = 235.0
+offset_right = 663.0
+offset_bottom = 435.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_51das")
+script = ExtResource("2_51das")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 275.0
+offset_top = 37.0
+offset_right = 862.0
+offset_bottom = 166.0
+texture = ExtResource("3_y5yvk")
+script = ExtResource("4_uaagf")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
